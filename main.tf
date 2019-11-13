@@ -1,3 +1,7 @@
+provider "aws" {
+  region var.region
+  }
+
 locals {
   dns_name = "${join("", aws_efs_file_system.default.*.id)}.efs.${var.region}.amazonaws.com"
 }
